@@ -1,0 +1,8 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+place_redirect:
+    path: /place
+    defaults:
+        _controller: AppBundle:Default:place  

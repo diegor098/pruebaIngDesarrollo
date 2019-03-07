@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!--Codifo formulario-->
+<div class="container">
+<div class="col-lg-6" style="
+margin-top:50px;
+-webkit-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+border-radius: 25px;"
+>
+<h3>Pago de producto</h3><br>
+<p>Digite el formulario por completo</p>
+<hr>
+<form method="POST" action="{{ path('place_redirect') }}">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputidentificacion4">Cédula de Ciudadania</label>
+      <input type="numbre" name="identificacion" class="form-control" id="inputidentificacion4" placeholder="Número de identificación" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputNombres4">Nombres</label>
+      <input type="text" name="nombres" class="form-control" id="inputNombres4" placeholder="Nombres" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputApellidos">Apellidos</label>
+    <input type="text" name="apellidos" class="form-control" id="inputApellidos" placeholder="Apellidos" required>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Ej. prueba@hotmail.com" required>
+  </div>
+  <div class="form-group">
+    <label for="inputDireccion">Dirección</label>
+    <input type="text" name="direccion" class="form-control" id="inputDireccion" placeholder="Ej. Calle 10a" required>
+  </div>
+  <div class="form-group">
+    <label for="inputCelular">Celular</label>
+    <input type="text" name="celular" class="form-control" id="inputCelular" placeholder="Ej. 300123432" required>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputCity">Ciudad</label>
+      <input type="text" name="ciudad" class="form-control" id="inputCity" placeholder="Ej. Pasto ..." required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Pais</label>
+        <input type="text" name="pais" class="form-control" id="inputState" value="COLOMBIA" readonly>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputValor">Valor a pagar</label>
+      $<input type="numbre" name="valorapagar" class="form-control" id="inputValor" required>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Ralizar pago</button>
+  <hr>
+</form>
+</div>
+</div>
+<!--Mensajes de exito o error-->
+{% for flash_message in app.session.flashbag.get('rechazado') %}
+<div class="container">
+<div class="col-lg-8" style="
+margin-top:50px;
+-webkit-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+border-radius: 25px;"
+>
+<br>
+    <div class="alert alert-warning" role="alert">
+        {{ flash_message }}
+    </div>
+    <p>Estos son algunos datos:</p>
+        <p><b>Estado del pago</b>: {{respuestas.estado}}</p>
+        <p><b>Banco</b>: {{respuestas.banco}}</p>
+        <p><b>Valor a pagar</b>: ${{respuestas.valor}}</p>
+        <p><b>Fecha</b>: {{respuestas.fecha}}</p>
+        <p><b>Cédula de identificación</b>: {{respuestas.cedula}}</p>
+        <p><b>Nombres</b>: {{respuestas.nombres}}</p>
+        <p><b>Apellidos</b>: {{respuestas.apellidos}}</p>
+        <p><b>Email</b>: {{respuestas.email}}</p>
+        <p><b>Celular</b>: {{respuestas.celular}}</p>
+        <br>
+        </div>
+</div>
+{% endfor %}
+
+{% for flash_message in app.session.flashbag.get('exito') %}
+<div class="container">
+<div class="col-lg-8" style="
+margin-top:50px;
+-webkit-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+border-radius: 25px;"
+>
+<br>
+    <div class="alert alert-success" role="alert">
+        {{ flash_message }}
+    </div>
+    <p>Estos son algunos datos de tu transacción:</p>
+        <p><b>Referencia interna del pago</b>: {{respuestas.referencia}}</p>
+        <p><b>Estado del pago</b>: {{respuestas.estado}}</p>
+        <p><b>Banco</b>: {{respuestas.banco}}</p>
+        <p><b>Valor pagado</b>: ${{respuestas.valor}}</p>
+        <p><b>Fecha del pago</b>: {{respuestas.fecha}}</p>
+        <p><b>Cédula de identificación</b>: {{respuestas.cedula}}</p>
+        <p><b>Nombres</b>: {{respuestas.nombres}}</p>
+        <p><b>Apellidos</b>: {{respuestas.apellidos}}</p>
+        <p><b>Email</b>: {{respuestas.email}}</p>
+        <p><b>Celular</b>: {{respuestas.celular}}</p>
+        <br>
+        </div>
+</div>
+{% endfor %}
+{% for flash_message in app.session.flashbag.get('error') %}
+<div class="container">
+<div class="col-lg-8" style="
+margin-top:50px;
+-webkit-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+box-shadow: 9px 17px 43px -4px rgba(0,0,0,0.75);
+border-radius: 25px;"
+>
+<br>
+    <div class="alert alert-danger" role="alert">
+        <strong>Ha ocurrido un error!</strong> {{ flash_message }}.
+    </div>
+    <br>
+    </div>
+</div>
+{% endfor %}
+
+<!--Mensajes de exito o error-->
+{% endblock %}
+
