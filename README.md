@@ -14,13 +14,15 @@ Ejecución
 
 composer install
 
+- Al hacer el composer install despues de instalar las dependencias, te pedirá los datos de una base de datos, como en el momento no hay ninguna conexion, simplemente hacemos enter a todas las opciones para dejar por defecto y se instalará por completo.
+
 - Una vez hecho el composer install, se debe lanzar el servidor que trae Symfony para pruebas,
 se debe ejecutar el siguiente comando en consola, situandose en la carpeta del proyecto /placetopay:
 
 php bin/console server:run
 
 - Una vez lanzado el comando, se debe ingresar a la siguiente ruta en el navegador para
-la posterior vista del proyecto
+la posterior vista del proyecto, Nota: si no tiene libre el puerto 8000, se ejecutará en el 8001
 
 http://localhost:8000/index
 

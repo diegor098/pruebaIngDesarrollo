@@ -156,7 +156,7 @@ class DefaultController extends Controller
         }
     }
 
-    //Función para consultar con el requestId si el pago fue o no exitoso a la API de PlacetoPay
+    //Función para consultar con el requestId si el pago fue o no exitoso a la API de PlacetoPay.
      /**
      * @Route("/placeres", name="placeres")
      */
