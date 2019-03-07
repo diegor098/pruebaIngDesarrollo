@@ -6,6 +6,7 @@ El desarrollo esta hecho bajo el framework PHP Symfony, utlizando el MVC (Modelo
 ==================
 Ejecución
 ==================
+- Descargar el proyecto en zip, o bien sea hacer un git clone del proyecto.
 
 - Para ejecutar el proyecto, primero se debe tener instalado composer, y colocarlo globalmente para su posterior uso.
 
