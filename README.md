@@ -21,6 +21,8 @@ se debe ejecutar el siguiente comando en consola, situandose en la carpeta del p
 
 php bin/console server:run
 
+Nota: despues de ejcutar el comando, no cerrar la consola, para que el servidor siga activo.
+
 - Una vez lanzado el comando, se debe ingresar a la siguiente ruta en el navegador para
 la posterior vista del proyecto, Nota: si no tiene libre el puerto 8000, se ejecutará en el 8001
 

@@ -144,7 +144,9 @@ class DefaultController extends Controller
             //iniciamos una sesión para guardar el requestiD y posteriormente obtenerlo en el contrlador "placeresAction"
             $session = new Session();
 
-            if(!isset($_SESSION)) $session->start();
+            if (session_status() !== PHP_SESSION_ACTIVE) {
+                $session->start();
+            }
 
             // Establecer una variable con el nombre requestId
             $session->set('requestId', $id);
