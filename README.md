@@ -7,12 +7,19 @@ El desarrollo esta hecho bajo el framework PHP Symfony, utlizando el MVC (Modelo
 Ejecución
 ==================
 
-Para ejecutar el proyecto, primero se debe lanzar el servidor que trae Symfony,
+- Para ejecutar el proyecto, primero se debe tener instalado composer, y colocarlo globalmente para su posterior uso.
+
+- Una vez instalado, ejecutar el siguiente comando en consola dentro de la carpeta del proyecto 
+/placetopay:
+
+composer install
+
+- Una vez hecho el composer install, se debe lanzar el servidor que trae Symfony para pruebas,
 se debe ejecutar el siguiente comando en consola, situandose en la carpeta del proyecto /placetopay:
 
 php bin/console server:run
 
-Una vez lanzado el comando, se debe ingresar a la siguiente ruta en el navegador para
+- Una vez lanzado el comando, se debe ingresar a la siguiente ruta en el navegador para
 la posterior vista del proyecto
 
 http://localhost:8000/index
