@@ -20,7 +20,7 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('default/place.html.twig');
     }
-
+    //Función para llamar al index del formulario
     /**
      * @Route("/index", name="homepage")
      */
@@ -30,6 +30,7 @@ class DefaultController extends Controller
         return $this->render('default/place.html.twig');
     }
 
+    //Funcion para hacer la petición de pago a la API de PlacetoPay
      /**
      * @Route("/place", name="place")
      */
@@ -155,6 +156,7 @@ class DefaultController extends Controller
         }
     }
 
+    //Función para consultar con el requestId si el pago fue o no exitoso a la API de PlacetoPay
      /**
      * @Route("/placeres", name="placeres")
      */
